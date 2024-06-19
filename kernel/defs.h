@@ -87,6 +87,7 @@ void            printfinit(void);
 
 // proc.c
 int             cpuid(void);
+int             safe_cpuid(void);
 void            exit(int);
 int             fork(void);
 int             growproc(int);

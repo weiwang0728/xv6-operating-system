@@ -61,8 +61,17 @@ procinit(void)
 // to a different CPU.
 int
 cpuid()
-{
+{ 
+  // close interrupts;
   int id = r_tp();
+  // turn on interruputs;
+  return id;
+}
+
+int safe_cpuid() {
+  push_off();
+  int id = cpuid();
+  pop_off();
   return id;
 }
 
